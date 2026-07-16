@@ -1,0 +1,106 @@
+/* 기본 초기화 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 1. 레이아웃 중앙 정렬 */
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f2f5;
+}
+
+/* 2. 카드 스타일링 */
+.profile-card {
+  width: 350px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 32px 24px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* 3. 이미지 스타일링 */
+.card-header {
+  margin-bottom: 20px;
+}
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #6366f1; /* 포인트 컬러: Indigo */
+}
+
+/* 4. 텍스트 타이포그래피 */
+.card-body {
+  margin-bottom: 24px;
+}
+
+.user-name {
+  font-size: 24px;
+  color: #1f2937;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.user-role {
+  font-size: 14px;
+  color: #6366f1;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+
+.user-bio {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* 5. 버튼 스타일링 */
+.card-footer {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.btn {
+  flex: 1; /* 버튼 너비를 1:1 비율로 균등 분배 */
+  padding: 12px 0;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out; /* 부드러운 전환 효과 */
+}
+
+.btn-primary {
+  background-color: #6366f1;
+  color: #ffffff;
+}
+
+.btn-secondary {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+/* 6. Hover 인터랙션 */
+.btn-primary:hover {
+  background-color: #4f46e5;
+}
+
+.btn-secondary:hover {
+  background-color: #e5e7eb;
+}
