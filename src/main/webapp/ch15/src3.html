@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript">
+	
+</script>
+<title>제목입력</title>
+</head>
+<body>
+	<script type="text/javascript">
+		// window 클래스로 생성된 객체를 Window window = new window() <- 내부적 제공
+		// window는 생략 가능
+		window.alert("안녕하세요");
+		let reply = window.confirm("정말 결제를 하시겠습니까?");
+		let name = window.prompt("이름을 입력하세요", "익명");
+		// 브라우저에 출력
+		// Document 클래스가 있고 Document document = new document() <- 내부적 제공
+		// document란 페이지 전체 즉, 하나의 물체라고 보면된다.
+		document.write("reply: " + reply + "<br>");
+		document.write("name: " + name + "<br>");
+		document.write("<h1>반갑습니다.<h1>");
+		console.log("F12에서 확인하세요");
+	</script>
+</body>
+</html>
