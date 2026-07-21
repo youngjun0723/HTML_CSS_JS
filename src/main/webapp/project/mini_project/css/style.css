@@ -1,4 +1,6 @@
-/* 기본 초기화 */
+/* ==========================
+   1. 기본 초기화 및 레이아웃
+   ========================== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,11 +12,14 @@ body {
   background-color: #f0f2f5;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   min-height: 100vh;
+  padding: 40px 20px;
 }
 
-/* 전체 컨테이너 카드 스타일 */
+/* ==========================
+   2. 메인 컨테이너 박스
+   ========================== */
 #container {
   width: 100%;
   max-width: 650px;
@@ -25,7 +30,6 @@ body {
   text-align: center;
 }
 
-/* 상단 타이틀 영역 */
 .site-title {
   font-size: 20px;
   font-weight: 700;
@@ -33,7 +37,9 @@ body {
   margin-bottom: 15px;
 }
 
-/* 네비게이션바 */
+/* ==========================
+   3. 상단 네비게이션 메뉴
+   ========================== */
 nav {
   margin-bottom: 30px;
   border-bottom: 1px solid #d1d5db;
@@ -58,13 +64,17 @@ nav {
   color: #6366f1;
 }
 
-/* 콘텐츠 영역 공통 */
+/* ==========================
+   4. 콘텐츠 영역 공통
+   ========================== */
 .content-section {
   margin-top: 20px;
   text-align: left;
 }
 
-/* --- About 카드형 스타일 (새로 추가) --- */
+/* ==========================
+   5. About 페이지 (프로필 카드)
+   ========================== */
 .about-card {
   background-color: #f9fafb;
   border: 1px solid #e5e7eb;
@@ -84,37 +94,24 @@ nav {
   flex-shrink: 0;
 }
 
-.about-info .user-name {
-  font-size: 20px;
-  font-weight: 700;
-  color: #374151;
-  margin-bottom: 6px;
-}
-
-.about-info .user-email {
-  font-size: 14px;
-  color: #6b7280;
-  margin-bottom: 15px;
-}
-
 .social-links {
   display: flex;
   gap: 10px;
   align-items: center;
 }
 
-.social-links img {
-  width: 32px;
-  height: 32px;
-  cursor: pointer;
-  transition: transform 0.2s;
+.social-links a i {
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
-.social-links img:hover {
-  transform: scale(1.1);
+.social-links a i:hover {
+  color: #6366f1;
+  transform: translateY(-2px);
 }
 
-/* 테이블 스타일 (Skills 페이지용) */
+/* ==========================
+   6. Skills 페이지 (테이블)
+   ========================== */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -135,4 +132,80 @@ th {
 
 td {
   color: #4b5563;
+}
+
+/* ==========================
+   7. 다크 모드 스타일
+   ========================== */
+body.dark-mode {
+  background-color: #121212;
+}
+
+body.dark-mode #container {
+  background-color: #1e1e1e;
+  color: #f3f4f6;
+}
+
+/* 타이틀 및 주요 제목 */
+body.dark-mode .site-title,
+body.dark-mode .user-name,
+body.dark-mode h2,
+body.dark-mode th {
+  color: #ffffff !important;
+}
+
+/* 설명글, 이메일, 본문 텍스트 (가독성 향상) */
+body.dark-mode .user-email,
+body.dark-mode .user-bio,
+body.dark-mode .content-section p,
+body.dark-mode td {
+  color: #e5e7eb !important;
+}
+
+/* 상단 메뉴바 글자 */
+body.dark-mode #topMenu li a {
+  color: #d1d5db !important;
+}
+
+body.dark-mode #topMenu li a:hover {
+  color: #818cf8 !important;
+}
+
+/* Home 화면의 메뉴 버튼 백그라운드 대응 */
+body.dark-mode #topMenu li a[style*="background-color"] {
+  background-color: #2a2a2a !important;
+  color: #f3f4f6 !important;
+}
+
+/* 프로필 카드 다크모드 */
+body.dark-mode .about-card {
+  background-color: #2a2a2a;
+  border: 1px solid #4b5563;
+}
+
+/* 테이블 다크모드 선 및 배경 */
+body.dark-mode th,
+body.dark-mode td {
+  border: 1px solid #4b5563 !important;
+}
+
+body.dark-mode th {
+  background-color: #374151 !important;
+}
+
+/* 다크모드 토글 버튼 */
+#darkModeBtn {
+  background: none;
+  border: 1px solid #d1d5db;
+  border-radius: 20px;
+  padding: 5px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+body.dark-mode #darkModeBtn {
+  border-color: #4b5563;
+  color: #f3f4f6;
+  background-color: #2a2a2a;
 }

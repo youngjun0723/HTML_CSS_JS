@@ -3,39 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About - 포트폴리오</title>
+  <title>About</title>
   <link rel="stylesheet" href="css/style.css">
-  <!-- 폰트어썸 (아이콘용) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
   <div id="container">
-    <div class="site-title" style="text-align: left; font-size: 18px; border-bottom: 1px solid #e5e7eb; padding-bottom: 10px;">
-      About 👩‍💻
+    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e5e7eb; padding-bottom: 10px; margin-bottom: 15px;">
+      <div class="site-title" style="margin-bottom: 0; font-size: 18px;">About 👩‍💻</div>
+      <button id="darkModeBtn" onclick="toggleDarkMode()">🌙 다크모드</button>
     </div>
 
     <nav style="margin-top: 15px;">
       <ul id="topMenu">
         <li><a href="home.html">🏠 Home</a></li>
-        <li><a href="about.html" style="color: #6366f1;">About</a></li>
+        <li><a href="about.html" style="color: #6366f1; font-weight: bold;">About</a></li>
         <li><a href="like.html">Like</a></li>
         <li><a href="skills.html">Skills</a></li>
       </ul>
     </nav>
 
-    <!-- 사진을 누르면 깃허브로 이동하는 카드형 About 영역 -->
     <section class="content-section">
       <div class="about-card">
-        <a href="https://github.com/youngjun0723" target="_blank">
-          <img src="images/KakaoTalk_20260721_072522.jpg" alt="프로필 이미지" class="about-img" title="깃허브로 이동">
-        </a>
+        <!-- 사진을 감싸고 있던 a 태그를 제거하여 이미지만 깔끔하게 남김 -->
+        <img src="images/KakaoTalk_20260721_072522.jpg" alt="프로필 이미지" class="about-img">
+        
         <div class="about-info">
-          <div class="user-name">영준 (Young Jun)</div>
-          <div class="user-email">youngjun0603@naver.com</div>
+          <div class="user-name" style="font-size: 20px; font-weight: 700; color: #374151; margin-bottom: 4px;">영준 (Young Jun)</div>
+          <div class="user-email" style="font-size: 14px; font-weight: 400; color: #6b7280; margin-bottom: 8px;">youngjun0603@naver.com</div>
+          <div class="user-bio" style="font-size: 13px; color: #4b5563; margin-bottom: 12px;">기본기에 충실한 백엔드 개발자 지망생입니다.</div>
+          
+          <!-- 깃허브 아이콘에만 a 태그 링크 유지 -->
           <div class="social-links">
-            <!-- 깃허브 아이콘 클릭 시 이동 -->
-            <a href="https://github.com/youngjun0723" target="_blank">
+            <a href="https://github.com/youngjun0723" target="_blank" title="깃허브로 이동">
               <i class="fa-brands fa-github fa-2x" style="color: #24292e;"></i>
             </a>
           </div>
@@ -44,5 +45,25 @@
     </section>
   </div>
 
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+      const btn = document.getElementById('darkModeBtn');
+      if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('darkMode', 'on');
+        btn.innerText = '☀️ 라이트모드';
+      } else {
+        localStorage.setItem('darkMode', 'off');
+        btn.innerText = '🌙 다크모드';
+      }
+    }
+
+    if (localStorage.getItem('darkMode') === 'on') {
+      document.body.classList.add('dark-mode');
+      window.onload = function() {
+        document.getElementById('darkModeBtn').innerText = '☀️ 라이트모드';
+      }
+    }
+  </script>
 </body>
 </html>
